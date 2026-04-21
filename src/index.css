@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #f2ca50;
+  --color-primary-dark: #D4AF37;
+  --color-primary-container: #d4af37;
+  --color-on-primary: #3c2f00;
+  --color-background: #080808;
+  --color-surface: #121212;
+  --color-surface-container: #1c1b1b;
+  --color-surface-bright: #2a2a2a;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #d0c5af;
+  --color-outline: #4d4635;
+
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --background-image-gradient-gold: linear-gradient(to right, #D4AF37, #f2ca50);
+  --background-image-glass: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+/* Force dark theme regardless of tailwind loading state to prevent white screen */
+:root {
+  background-color: #080808;
+  color: #e5e2e1;
+}
+
+html, body {
+  background-color: #080808 !important;
+  color: #e5e2e1 !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headline);
+    @apply uppercase tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-surface/80 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-card {
+    background-color: rgba(28, 27, 27, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s ease;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(242, 202, 80, 0.2);
+  }
+
+  .premium-button {
+    @apply relative overflow-hidden bg-primary text-on-primary font-headline font-bold py-3 px-8 uppercase tracking-widest text-xs transition-all duration-300 hover:brightness-110 active:scale-95;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4d4635;
+  @apply rounded-full border-2 border-background hover:bg-on-surface-variant transition-colors;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
