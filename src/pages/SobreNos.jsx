@@ -18,7 +18,23 @@ const SobreNos = () => {
   ];
 
   return (
-    <div className="pt-32 pb-20 px-6">
+    <div className="pb-20 px-6">
+      {/* Page hero with background */}
+      <div className="relative pt-48 pb-20 mb-20 -mx-6 px-6 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80"
+            alt="Nossa História"
+            className="w-full h-full object-cover opacity-15"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background" />
+        </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <span className="text-primary font-headline font-bold tracking-[0.4em] text-xs mb-4 block">NOSSA HISTÓRIA</span>
+          <h1 className="text-5xl md:text-7xl font-black mb-4 italic">TRADIÇÃO E <br /><span className="text-primary not-italic">TECNOLOGIA</span></h1>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto">
         {/* Story Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
@@ -27,8 +43,6 @@ const SobreNos = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-primary font-headline font-bold tracking-[0.4em] text-xs mb-4 block">NOSSA HISTÓRIA</span>
-            <h1 className="text-5xl md:text-7xl font-black mb-8 italic">TRADIÇÃO E <br /><span className="text-primary not-italic">TECNOLOGIA</span></h1>
             <p className="text-on-surface-variant text-lg md:text-xl font-body leading-relaxed mb-8">
               A ART Engenharia nasceu do desejo de transformar a infraestrutura regional através da excelência técnica e do suporte operacional robusto.
             </p>
@@ -78,7 +92,16 @@ const SobreNos = () => {
         </div>
 
         {/* Timeline Section */}
-        <div className="border-t border-white/5 pt-32">
+        <div className="relative border-t border-white/5 pt-32 -mx-6 px-6 overflow-hidden">
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <img
+              src="https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=1600&q=50"
+              alt=""
+              className="w-full h-full object-cover opacity-5"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/60" />
+          </div>
+          <div className="max-w-7xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-20 italic">NOSSA <span className="text-primary not-italic">TRAJETÓRIA</span></h2>
           <div className="relative border-l border-primary/30 ml-4 md:ml-0 md:border-l-0 md:grid md:grid-cols-4 gap-8">
             {timeline.map((t, i) => (
@@ -97,12 +120,14 @@ const SobreNos = () => {
               </motion.div>
             ))}
           </div>
+          </div>
         </div>
 
         {/* CTA */}
         <div className="mt-32 glass-panel p-16 text-center">
-          <h2 className="text-3xl font-black mb-6 uppercase">Quer saber mais sobre nossa operação?</h2>
-          <WhatsAppButton className="mx-auto px-12 py-5" />
+          <h2 className="text-3xl font-black mb-4 uppercase">Quer saber mais sobre nossa operação?</h2>
+          <p className="text-on-surface-variant font-body mb-10 opacity-70 max-w-xl mx-auto">Nossa equipe está pronta para tirar todas as suas dúvidas e apresentar as melhores soluções para o seu projeto.</p>
+          <WhatsAppButton className="mx-auto px-12 py-5" variant="gold" label="FALE CONOSCO" />
         </div>
       </div>
     </div>

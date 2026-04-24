@@ -16,6 +16,36 @@ const ScrollToTop = () => {
   return null;
 };
 
+const FloatingWhatsApp = () => {
+  const phoneNumber = "557332232191";
+  const message = encodeURIComponent("Olá! Gostaria de falar com a equipe da ART Engenharia.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+  return (
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-6 right-6 z-[200] group flex items-center gap-3"
+      aria-label="Fale conosco pelo WhatsApp"
+    >
+      {/* Tooltip */}
+      <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0 bg-background/90 backdrop-blur-md border border-white/10 text-white text-[10px] font-headline font-bold tracking-widest uppercase px-4 py-2 rounded-sm shadow-xl whitespace-nowrap pointer-events-none">
+        Fale Conosco
+      </span>
+
+      {/* Button */}
+      <div className="relative">
+        {/* Pulse ring */}
+        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" />
+        <div className="relative w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_30px_rgba(37,211,102,0.6)] transition-all duration-300 flex items-center justify-center hover:scale-110">
+          <img src="/imagens/whatsappicon.png" alt="WhatsApp" className="w-7 h-7 object-contain brightness-0 invert" />
+        </div>
+      </div>
+    </a>
+  );
+};
+
 function App() {
   return (
     <Router>
@@ -31,6 +61,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <FloatingWhatsApp />
       </div>
     </Router>
   );

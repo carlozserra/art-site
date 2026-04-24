@@ -41,11 +41,11 @@ const Footer = () => {
                 </div>
                 <span>artengenhariaelocacoes@gmail.com</span>
               </a>
-              <a href="https://instagram.com/artengenharia.locacoes" className="flex items-center gap-3 hover:text-white transition-colors group">
+              <a href="https://instagram.com/artengenhariaelocacoes" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-white transition-colors group">
                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
                   <Instagram size={14} className="text-primary" />
                 </div>
-                <span>@artengenharia.locacoes</span>
+                <span>@artengenhariaelocacoes</span>
               </a>
             </div>
           </div>
@@ -56,8 +56,8 @@ const Footer = () => {
             <div className="flex items-start gap-3 text-xs text-on-surface-variant">
               <MapPin size={16} className="text-primary shrink-0" />
               <p className="leading-relaxed">
-                Ilhéus, Bahia<br />
-                Atendimento em toda região sul.
+                R. Brg. Eduardo Gomes, 130 - Pontal<br />
+                Ilhéus - BA, 45654-420
               </p>
             </div>
           </div>

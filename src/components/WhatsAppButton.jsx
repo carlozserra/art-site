@@ -1,4 +1,4 @@
-const WhatsAppButton = ({ productName, className = "", variant = "green" }) => {
+const WhatsAppButton = ({ productName, className = "", variant = "green", label }) => {
   const phoneNumber = "557332232191";
   const message = productName 
     ? `Olá! Gostaria de fazer um orçamento do equipamento: ${productName}.`
@@ -20,7 +20,7 @@ const WhatsAppButton = ({ productName, className = "", variant = "green" }) => {
       className={`flex items-center justify-center gap-2 px-4 py-3 font-headline font-bold text-[10px] tracking-widest uppercase transition-all duration-300 active:scale-[0.98] ${styles[variant]} ${className}`}
     >
       <img src="/imagens/whatsappicon.png" alt="WhatsApp" className="w-5 h-5 object-contain brightness-0 invert drop-shadow-sm" />
-      {variant === 'green' ? 'SOLICITAR ORÇAMENTO VIA WHATSAPP' : 'SOLICITAR VALOR'}
+      {label || (variant === 'green' ? 'SOLICITAR ORÇAMENTO VIA WHATSAPP' : 'SOLICITAR VALOR')}
     </a>
   );
 };
