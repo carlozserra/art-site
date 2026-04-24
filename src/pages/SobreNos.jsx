@@ -23,7 +23,7 @@ const SobreNos = () => {
       <div className="relative pt-48 pb-20 mb-20 -mx-6 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80"
+            src="/imagens/art_photo.jpeg"
             alt="Nossa História"
             className="w-full h-full object-cover opacity-15"
           />
@@ -68,9 +68,9 @@ const SobreNos = () => {
           >
             <div className="absolute -inset-4 border border-primary/20 -z-10 translate-x-4 translate-y-4" />
             <img 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBesY4mYsobHYRWEgSFNHntbGQXxAz46IL9Tn4dO-h48R1prwn4LxhWYFvZA5ijBRneIltYa6SglewywQV2UAmwBqOFr7mI5DzPQLPa_S2C4MCVCXLlKR0Ko1ERyr6woDsP0x18dfOjakUrKlxYkKE7uyknYwJ4G_7vEP66FupGKoepdnPdjDSpMxKP17umXyL5mf90h6Wg2kqbDvz37qaE0VprrEcsL2ByB1ASAcQNieWrJhdgntzTRpTab-u6jPvAlWeqmphtPxY" 
+              src="/imagens/art_photo.jpeg" 
               alt="Sobre Nós" 
-              className="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+              className="w-full h-[600px] object-cover transition-all duration-700" 
             />
           </motion.div>
         </div>
@@ -95,7 +95,7 @@ const SobreNos = () => {
         <div className="relative border-t border-white/5 pt-32 -mx-6 px-6 overflow-hidden">
           <div className="absolute inset-0 z-0 pointer-events-none">
             <img
-              src="https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=1600&q=50"
+              src="/imagens/art_photo.jpeg"
               alt=""
               className="w-full h-full object-cover opacity-5"
             />
