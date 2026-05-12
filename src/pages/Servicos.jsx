@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion';
-import { Mountain, Droplets, Grid, Settings2, Construction, Trash2 } from 'lucide-react';
+import { Droplets, Grid, Settings2, Home, ClipboardList, Warehouse, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import WhatsAppButton from '../components/WhatsAppButton';
 
 const services = [
-  { id: 2, title: 'Saneamento', icon: Droplets, desc: 'Execução técnica de redes coletoras e sistemas de drenagem pluvial urbana e industrial.', items: ['Rede coletora', 'Drenagem pluvial', 'Estações de tratamento', 'Reservatórios'] },
-  { id: 3, title: 'Pavimentação', icon: Grid, desc: 'Asfaltamento e calçamento de alto desempenho para vias urbanas e pátios logísticos.', items: ['Asfaltamento', 'Calçamento', 'Piso industrial', 'Sinalização'] },
-  { id: 4, title: 'Locação', icon: Settings2, desc: 'Frota completa de máquinas pesadas com manutenção certificada e operadores experientes.', items: ['Escavadeiras', 'Retroescavadeiras', 'Rolos compactadores', 'Caminhões'] },
-  { id: 5, title: 'Fundações', icon: Construction, desc: 'Serviços especializados de fundações profundas e contenções para obras de grande porte.', items: ['Estacas', 'Tubulões', 'Muros de arrimo', 'Cortinas atirantadas'] },
-  { id: 6, title: 'Demolição', icon: Trash2, desc: 'Demolição controlada de estruturas com absoluta segurança e gestão eficiente de resíduos.', items: ['Demolição mecânica', 'Desmontagem', 'Remoção de entulho', 'Reciclagem'] },
+  { id: 1, title: 'Locação de Equipamentos', icon: Settings2, desc: 'Locação de máquinas e equipamentos destinados à execução de obras civis e serviços de infraestrutura.', items: ['Marteletes demolidores', 'Compactadores', 'Betoneiras', 'Andaimes', 'Escoras', 'Geradores de até 9kVA'], hasCatalog: true },
+  { id: 2, title: 'Execução de Obras Residenciais', icon: Home, desc: 'Execução completa de obras residenciais, desde a fundação até o acabamento final.', items: ['Locação e preparação do terreno', 'Execução de fundações', 'Estrutura e alvenaria', 'Instalações elétricas e hidrossanitárias', 'Cobertura e impermeabilização', 'Revestimentos e acabamentos'] },
+  { id: 3, title: 'Esgotamento Sanitário', icon: Droplets, desc: 'Implantação e manutenção de sistemas de coleta e condução de efluentes sanitários.', items: ['Escavação manual e mecanizada', 'Assentamento de tubulações', 'Instalação de caixas de inspeção', 'Execução de elevatórias', 'Reaterro e compactação', 'Recuperação de pavimentação'] },
+  { id: 4, title: 'Laudos Técnicos', icon: ClipboardList, desc: 'Elaboração de laudos técnicos de engenharia para avaliação, diagnóstico e emissão de parecer técnico das condições construtivas da edificação.', items: ['Inspeção predial', 'Avaliação de manifestações patológicas', 'Identificação de fissuras e infiltrações', 'Análise estrutural', 'Emissão de parecer técnico', 'Registro fotográfico técnico'] },
+  { id: 5, title: 'Lavagem de Reservatórios', icon: Warehouse, desc: 'Execução de limpeza técnica e higienização de reservatórios de água, garantindo condições adequadas de armazenamento e qualidade sanitária.', items: ['Esvaziamento do reservatório', 'Limpeza e escovação interna', 'Remoção de resíduos e sedimentos', 'Higienização e desinfecção', 'Inspeção das condições estruturais', 'Reabastecimento e liberação do sistema'] },
+  { id: 6, title: 'Pavimentação', icon: Grid, desc: 'Execução de serviços de pavimentação para vias, acessos e áreas urbanas, garantindo resistência, durabilidade e adequado acabamento superficial.', items: ['Regularização de subleito', 'Execução de base e sub-base', 'Assentamento de pavimento intertravado', 'Pavimentação em paralelepípedo', 'Compactação de solo', 'Recuperação de pavimentação'] },
 ];
 
 const Servicos = () => {
@@ -81,11 +83,68 @@ const Servicos = () => {
                 ))}
               </ul>
 
-              <WhatsAppButton productName={service.title} className="w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {service.hasCatalog ? (
+                <Link
+                  to="/catalogo"
+                  className="w-full text-center py-4 bg-primary text-on-primary font-headline font-bold text-[9px] uppercase tracking-[0.3em] hover:brightness-110 transition-all"
+                >
+                  VER EQUIPAMENTOS
+                </Link>
+              ) : (
+                <WhatsAppButton productName={service.title} className="w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              )}
             </motion.div>
           ))}
         </div>
         </div>
+
+        {/* Instagram CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-24"
+        >
+          <div className="max-w-7xl mx-auto mb-12 text-center">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <Instagram size={28} className="text-primary" />
+              <span className="text-primary font-headline font-bold tracking-[0.3em] text-[10px]">@ARTENGENHARIAELOCACOES</span>
+            </div>
+            <h3 className="text-4xl md:text-5xl font-black italic uppercase leading-tight">
+              Acompanhe nossas <br />
+              <span className="text-primary not-italic">Redes Sociais</span>
+            </h3>
+            <p className="text-on-surface-variant font-body leading-relaxed mt-6 max-w-2xl mx-auto">
+              Fique por dentro de promoções, novidades e dicas de construção no nosso Instagram.
+            </p>
+          </div>
+
+          {/* Instagram Embed - Recent Posts Preview */}
+          <div className="w-full overflow-hidden rounded-sm border border-white/5 bg-[#0a0a0a]">
+            <script
+              src="https://behold.so/widgets/embed.js"
+              data-id="artengenhariaelocacoes"
+              data-height="480"
+              data-rows="2"
+              data-cols="3"
+              data-theme="dark"
+              data-radius="0"
+              data-padding="8"
+              data-sort="recent"
+            />
+          </div>
+
+          <div className="max-w-7xl mx-auto mt-12 flex justify-center">
+            <a
+              href="https://instagram.com/artengenhariaelocacoes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="premium-button"
+            >
+              SEGUIR NO INSTAGRAM
+            </a>
+          </div>
+        </motion.div>
       </div>
     </div>
   );

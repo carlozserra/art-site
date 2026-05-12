@@ -81,15 +81,19 @@ const ProductCarousel = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
         >
           {[...marqueeProducts, ...marqueeProducts, ...marqueeProducts].map((item, idx) => (
-            <Link
+            <div
               key={idx}
-              to={`/catalogo?search=${item.name}`}
               className="flex-shrink-0 w-60 md:w-64 aspect-square glass-panel p-4 md:p-6 group/item relative overflow-hidden flex flex-col items-center justify-center gap-4"
-              draggable={false}
             >
               <img src={item.img} alt={item.name} className="w-4/5 h-4/5 object-contain group-hover/item:scale-110 transition-all duration-700" draggable={false} />
-              <p className="text-[10px] font-headline font-bold tracking-widest uppercase opacity-80 group-hover/item:text-primary transition-all underline underline-offset-8 decoration-primary/0 group-hover/item:decoration-primary/50">{item.name}</p>
-            </Link>
+              <Link
+                to={`/catalogo?search=${item.name}`}
+                className="text-[10px] font-headline font-bold tracking-widest uppercase opacity-80 group-hover/item:text-primary transition-all hover:underline underline-offset-4 decoration-primary/50"
+                draggable={false}
+              >
+                {item.name}
+              </Link>
+            </div>
           ))}
         </motion.div>
       </div>
@@ -105,7 +109,7 @@ const ContactMap = () => {
   return (
     <section className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img src="/imagens/banner.JPEG" alt="Fundo" className="w-full h-full object-cover opacity-30" />
+        <img src="/imagens/banner.jpeg" alt="Fundo" className="w-full h-full object-cover object-center opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background" />
       </div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -157,14 +161,14 @@ const Home = () => {
   return (
     <div className="pt-24 flex flex-col">
       {/* Cinematic Hero */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden px-6">
-        <div className="absolute inset-0 z-0">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden px-6 -mt-24 pt-32 pb-16">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
           <img
-            src="/imagens/banner.JPEG"
+            src="/imagens/banner.jpeg"
             alt="Obra Industrial ART Engenharia"
-            className="w-full h-full object-cover opacity-50 scale-105"
+            className="w-full h-full object-cover object-[65%_50%] opacity-70"
           />
         </div>
 
@@ -308,7 +312,7 @@ const Home = () => {
       {/* Global CTA */}
       <section className="py-32 px-6 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/imagens/banner.JPEG" alt="Fundo" className="w-full h-full object-cover opacity-30" />
+          <img src="/imagens/banner.jpeg" alt="Fundo" className="w-full h-full object-cover object-center opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background" />
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">

@@ -298,6 +298,16 @@ const Catalogo = () => {
     }
   }, []);
 
+  // Listen for product open events from header dropdown
+  useEffect(() => {
+    const handleOpenProduct = (e) => {
+      const item = equipmentData.find(eq => eq.id === e.detail);
+      if (item) setSelectedItem(item);
+    };
+    window.addEventListener('art-open-product', handleOpenProduct);
+    return () => window.removeEventListener('art-open-product', handleOpenProduct);
+  }, []);
+
   const setSearch = (val) => {
     if (val) {
       setSearchParams({ search: val });
@@ -381,7 +391,7 @@ const Catalogo = () => {
           {categories.map(cat => (
             <button
               key={cat.id}
-              onClick={() => setFilter(cat.id)}
+              onClick={() => { setFilter(cat.id); setSearch(''); }}
               className={`px-10 py-4 text-[10px] font-headline font-bold tracking-widest uppercase transition-all rounded-sm border ${filter === cat.id
                 ? 'bg-primary text-on-primary border-primary shadow-[0_10px_30px_rgba(242,202,80,0.15)]'
                 : 'bg-white/[0.02] text-on-surface-variant border-white/5 hover:bg-white/5 hover:border-white/10'
@@ -432,13 +442,24 @@ const Catalogo = () => {
                   </div>
 
                   <div className="mt-auto flex flex-col gap-3">
+                    <WhatsAppButton productName={item.name} className="w-full" />
                     <button
                       onClick={(e) => { e.stopPropagation(); setSelectedItem(item); }}
                       className="w-full py-4 border border-white/10 font-headline font-bold text-[9px] uppercase tracking-[0.3em] hover:bg-white/5 transition-all text-on-surface-variant hover:text-white"
                     >
                       Ver Especificações
                     </button>
-                    <WhatsAppButton productName={item.name} className="w-full" />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        const text = `Confira esse equipamento na ART Engenharia: ${item.name} - ${window.location.origin}/catalogo?product=${item.id}`;
+                        window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+                      }}
+                      className="w-full py-4 border border-white/10 font-headline font-bold text-[9px] uppercase tracking-[0.3em] hover:bg-white/5 transition-all text-on-surface-variant hover:text-white flex items-center justify-center gap-2"
+                    >
+                      <Share2 size={12} />
+                      Compartilhar
+                    </button>
                   </div>
                 </div>
               </motion.div>

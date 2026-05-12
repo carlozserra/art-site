@@ -78,10 +78,10 @@ const Header = () => {
   }, [isDropdownOpen]);
 
   return (
-    <header className="fixed top-0 w-full z-50 pointer-events-auto">
+    <header className="fixed top-0 w-full z-50 pointer-events-auto bg-transparent">
 
       <div
-        className={`w-full transition-all duration-500 flex items-center ${isScrolled ? 'h-16 bg-background/90 backdrop-blur-xl border-b border-white/5' : 'h-24 bg-transparent'
+        className={`w-full transition-all duration-500 flex items-center ${isScrolled ? 'h-16 bg-background/90 backdrop-blur-xl' : 'h-24'
           }`}
       >
         <div className="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
@@ -108,14 +108,15 @@ const Header = () => {
               onMouseLeave={() => setIsDropdownOpen(false)}
               ref={dropdownRef}
             >
-              <Link
-                to="/catalogo"
-                className={`text-xs font-headline font-bold tracking-[0.15em] transition-all hover:text-primary flex items-center gap-2 h-full py-4 ${location.pathname === '/catalogo' ? 'text-primary' : 'text-on-surface-variant'
-                  }`}
-              >
-                CATÁLOGO
-                <ChevronDown size={12} className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
-              </Link>
+            <Link
+              to="/catalogo"
+              onClick={() => setIsDropdownOpen(false)}
+              className={`text-xs font-headline font-bold tracking-[0.15em] transition-all hover:text-primary flex items-center gap-2 h-full py-4 ${location.pathname === '/catalogo' ? 'text-primary' : 'text-on-surface-variant'
+                }`}
+            >
+              CATÁLOGO
+              <ChevronDown size={12} className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+            </Link>
 
               <AnimatePresence>
                 {isDropdownOpen && (
@@ -139,7 +140,7 @@ const Header = () => {
                                 <Link
                                   to={`/catalogo?product=${product.id}`}
                                   className="text-[11px] text-on-surface-variant hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-2 group/item"
-                                  onClick={() => setIsDropdownOpen(false)}
+                                  onClick={() => { setIsDropdownOpen(false); window.dispatchEvent(new CustomEvent('art-open-product', { detail: product.id })); }}
                                 >
                                   <ChevronRight size={10} className="text-primary opacity-0 group-hover/item:opacity-100 transition-all -translate-x-2 group-hover/item:translate-x-0" />
                                   {product.name}
@@ -176,10 +177,15 @@ const Header = () => {
               SOBRE NÓS
             </Link>
 
-            <button className="premium-button flex items-center gap-2 group">
+            <a
+              href="https://wa.me/557332232191?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="premium-button flex items-center gap-2 group"
+            >
               <span className="hidden lg:inline">SOLICITAR</span> ORÇAMENTO
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
-            </button>
+            </a>
           </nav>
 
           {/* Mobile Toggle */}
@@ -218,7 +224,14 @@ const Header = () => {
 
             <div className="mt-auto border-t border-white/10 pt-8">
               <p className="text-xs text-on-surface-variant mb-6 italic">Soluções em engenharia e locação de frotas pesadas.</p>
-              <button className="premium-button w-full text-sm py-5">FALAR COM ESPECIALISTA</button>
+              <a
+                href="https://wa.me/557332232191?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="premium-button w-full text-sm py-5"
+              >
+                FALAR COM ESPECIALISTA
+              </a>
             </div>
           </motion.div>
         )}
