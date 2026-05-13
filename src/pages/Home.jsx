@@ -109,7 +109,7 @@ const ContactMap = () => {
   return (
     <section className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img src="/imagens/banner.jpeg" alt="Fundo" className="w-full h-full object-cover object-center opacity-30" />
+        <img src="/imagens/banner.jpg" alt="Fundo" className="w-full h-full object-cover opacity-30" style={{ objectPosition: 'center 70%' }} />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background" />
       </div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -166,9 +166,9 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
           <img
-            src="/imagens/banner.jpeg"
+            src="/imagens/banner.jpg"
             alt="Obra Industrial ART Engenharia"
-            className="w-full h-full object-cover object-[65%_50%] opacity-70"
+            className="w-full h-full object-cover opacity-70" style={{ objectPosition: 'center 20%' }}
           />
         </div>
 
@@ -180,7 +180,7 @@ const Home = () => {
             className="max-w-3xl"
           >
             <span className="text-primary font-headline font-bold tracking-[0.5em] text-xs mb-6 block">ENGENHARIA E LOCAÇÕES</span>
-            <h1 className="text-5xl md:text-8xl font-black mb-8 italic uppercase leading-[0.9]">
+            <h1 className="text-5xl md:text-7xl font-black mb-8 italic uppercase leading-[0.9]">
               Construa com <br />Confiança, <br />
               <span className="text-primary not-italic">Alugue com Qualidade</span>
             </h1>
@@ -312,7 +312,7 @@ const Home = () => {
       {/* Global CTA */}
       <section className="py-32 px-6 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/imagens/banner.jpeg" alt="Fundo" className="w-full h-full object-cover object-center opacity-30" />
+          <img src="/imagens/banner.jpg" alt="Fundo" className="w-full h-full object-cover object-center opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background" />
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
