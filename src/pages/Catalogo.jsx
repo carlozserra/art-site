@@ -33,7 +33,7 @@ const equipmentData = [
     id: 4,
     name: 'Gerador de Energia',
     category: 'geradores',
-    specs: { potencia: '9 kVA  |  3 kVA', tipo: 'Diesel', fase: 'Trifásico' },
+    specs: { potencia: '9 kVA  |  3 kVA', tipo: 'Gasolina', fase: 'Trifásico' },
     description: 'Fonte confiável de energia para canteiros de obra. Garante autonomia e estabilidade para equipamentos elétricos.',
     image: '/imagens/produtos/gerador.webp'
   },
@@ -103,7 +103,7 @@ const equipmentData = [
   },
   {
     id: 15,
-    name: 'Martelo Demolidor 15kg',
+    name: 'Martelo Demolidor 12kg',
     category: 'demolicao',
     specs: { impacto: '25 J', motor: '1500 W', encaixe: 'HEX 30' },
     description: 'Específico para demolição de pisos e paredes de concreto. Alta produtividade com controle total.',
@@ -172,6 +172,86 @@ const equipmentData = [
     specs: { material: 'Aço Carbono', encaixe: 'Padrão', base: '15 x 15 cm' },
     description: 'Distribuição de carga estável para torres de andaime. Base robusta antifurto.',
     image: '/imagens/produtos/sapata_fixa.webp'
+  },
+  {
+    id: 24,
+    name: 'Vibrador de Imersão',
+    category: 'concretagem',
+    specs: { motor: '2 HP', frequencia: '180 Hz', mangueira: '6 m' },
+    description: 'Equipamento para vibrar concreto em formas e fundações. Garante melhor adensamento e eliminação de vazios.',
+    image: '/imagens/produtos/vibrador-imersao.png'
+  },
+  {
+    id: 25,
+    name: 'Escada Para Andaime',
+    category: 'andaimes',
+    specs: { altura: '1.0 m', material: 'Aço Galvanizado', norma: 'NR-35' },
+    description: 'Escada de acesso segura para andaimes. Estrutura reforçada com corrimão bilateral.',
+    image: '/imagens/produtos/escada-andaime.png'
+  },
+  {
+    id: 26,
+    name: 'Escada 13 Degraus Botafogo',
+    category: 'outros',
+    specs: { degraus: '13', material: 'Alumínio', capacidade: '150 kg' },
+    description: 'Escada extensível para serviços gerais. Leve, resistente e segura para uso profissional.',
+    image: '/imagens/produtos/escada-13graus.png'
+  },
+  {
+    id: 27,
+    name: 'Martelete 16kg',
+    category: 'demolicao',
+    specs: { peso: '12 kg', impacto: '65 J', motor: '1500 W' },
+    description: 'Martelete pesado para demolição de concreto e rock. Alta potência para trabalhos intensos.',
+    image: '/imagens/produtos/martelete-16kg.png'
+  },
+  {
+    id: 28,
+    name: 'Guarda Corpo Para Andaimes 1x1m',
+    category: 'andaimes',
+    specs: { medida: '1.0 x 1.0 m', material: 'Aço Galvanizado', norma: 'NR-18' },
+    description: 'Elemento de proteção coletiva para trabalhos em altura. Instalação rápida e segurança garantida.',
+    image: '/imagens/produtos/guarda-corpo-andaime.png'
+  },
+  {
+    id: 29,
+    name: 'Transformadores',
+    category: 'outros',
+    specs: { potencia: 'Variável', tensao: '220V/380V', tipo: 'Trifásico' },
+    description: 'Transformadores para conversão de tensão em canteiros de obra. Essential para equipamentos industriais.',
+    image: '/imagens/produtos/transformador.png'
+  },
+  {
+    id: 30,
+    name: 'Extensões',
+    category: 'outros',
+    specs: { comprimento: '20 a 50 m', bitola: '2.5 mm²', tomada: '3 pinos' },
+    description: 'Extensões elétricas para distribuição de energia no canteiro. Fio reforçado para uso profissional.',
+    image: '/imagens/produtos/extensao.png'
+  },
+  {
+    id: 31,
+    name: 'Perfurador de Solo a Gasolina',
+    category: 'outros',
+    specs: { motor: 'Gasolina', profundidade: '2.5 m', diametro: '100-300 mm' },
+    description: 'Equipamento para perfuração de solos em cercas e fundações. Motor potente para terrenos diversos.',
+    image: '/imagens/produtos/perfurador_solo_gasolina.webp'
+  },
+  {
+    id: 32,
+    name: 'Misturador Elétrico',
+    category: 'concretagem',
+    specs: { capacidade: '200 L', potencia: '3 HP', velocidade: '35 rpm' },
+    description: 'Misturador horizontal para argamassas e concretos. Ideal para obras de médio porte.',
+    image: '/imagens/produtos/misturador-eletrico.png'
+  },
+  {
+    id: 33,
+    name: 'Esmerilhadeira 4.1/2" e 9"',
+    category: 'corte',
+    specs: { disco: '4.1/2" e 9"', potencia: '2200 W', rotacao: '8500 rpm' },
+    description: 'Esmerilhadoras para corte e desbaste de metais e alvenaria. Disponíveis em dois tamanhos.',
+    image: '/imagens/produtos/esmerilhadeira.png'
   },
 ];
 

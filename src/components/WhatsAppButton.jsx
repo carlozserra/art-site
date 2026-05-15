@@ -1,7 +1,7 @@
-const WhatsAppButton = ({ productName, className = "", variant = "green", label }) => {
+const WhatsAppButton = ({ productName, className = "", variant = "green", label, itemType = "equipamento" }) => {
   const phoneNumber = "557332232191";
   const message = productName 
-    ? `Olá! Gostaria de fazer um orçamento do equipamento: ${productName}.`
+    ? `Olá! Gostaria de fazer um orçamento do ${itemType}: ${productName}.`
     : "Olá! Gostaria de falar com a equipe técnica sobre os serviços da ART Engenharia.";
   
   const encodedMessage = encodeURIComponent(message);

@@ -91,7 +91,7 @@ const Servicos = () => {
                   VER EQUIPAMENTOS
                 </Link>
               ) : (
-                <WhatsAppButton productName={service.title} className="w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <WhatsAppButton productName={service.title} itemType="serviço" className="w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               )}
             </motion.div>
           ))}

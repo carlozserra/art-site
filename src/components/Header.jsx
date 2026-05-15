@@ -17,7 +17,7 @@ const PRODUCT_LIST = [
   { id: 12, name: 'Lixadeira Angular', category: 'Corte' },
   { id: 13, name: 'Martelete Perfurador 2kg', category: 'Demolição' },
   { id: 14, name: 'Martelete Rompedor 5kg', category: 'Demolição' },
-  { id: 15, name: 'Martelo Demolidor 15kg', category: 'Demolição' },
+  { id: 15, name: 'Martelo Demolidor 12kg', category: 'Demolição' },
   { id: 16, name: 'Parafusadeira', category: 'Parafusadeiras' },
   { id: 17, name: 'Serra Circular', category: 'Corte' },
   { id: 18, name: 'Serra Mármore', category: 'Corte' },
