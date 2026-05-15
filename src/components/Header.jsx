@@ -26,6 +26,16 @@ const PRODUCT_LIST = [
   { id: 21, name: 'Rodízio Para Andaime', category: 'Andaimes' },
   { id: 22, name: 'Sapata Ajustável', category: 'Andaimes' },
   { id: 23, name: 'Sapata Fixa', category: 'Andaimes' },
+  { id: 24, name: 'Vibrador de Imersão', category: 'Concretagem' },
+  { id: 25, name: 'Escada Para Andaime', category: 'Andaimes' },
+  { id: 26, name: 'Escada 13 Degraus Botafogo', category: 'Outros' },
+  { id: 27, name: 'Martelete 16kg', category: 'Demolição' },
+  { id: 28, name: 'Guarda Corpo Para Andaimes 1x1m', category: 'Andaimes' },
+  { id: 29, name: 'Transformadores', category: 'Outros' },
+  { id: 30, name: 'Extensões', category: 'Outros' },
+  { id: 31, name: 'Perfurado de Solo a Gasolina', category: 'Outros' },
+  { id: 32, name: 'Misturador Elétrico', category: 'Concretagem' },
+  { id: 33, name: 'Esmerilhadeira 4.1/2" e 9"', category: 'Corte' },
 ];
 
 const CATEGORIES = [
@@ -125,7 +135,7 @@ const Header = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[calc(100vw-40px)] max-w-5xl glass-panel p-8 md:p-10 shadow-[0_40px_100px_rgba(0,0,0,0.6)] rounded-sm border-t-0 z-[100]"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[calc(100vw-40px)] max-w-5xl max-h-[70vh] overflow-y-auto glass-panel p-8 md:p-10 shadow-[0_40px_100px_rgba(0,0,0,0.6)] rounded-sm border-t-0 z-[100]"
                   >
                     <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
                       {CATEGORIES.map((cat) => (

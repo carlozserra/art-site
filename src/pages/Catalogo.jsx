@@ -185,7 +185,7 @@ const equipmentData = [
     id: 25,
     name: 'Escada Para Andaime',
     category: 'andaimes',
-    specs: { altura: '1.0 m', material: 'Aço Galvanizado', norma: 'NR-35' },
+    specs: { altura: '2.00 m', largura: '0.50 m', material: 'Aço Galvanizado', norma: 'NR-35' },
     description: 'Escada de acesso segura para andaimes. Estrutura reforçada com corrimão bilateral.',
     image: '/imagens/produtos/escada-andaime.png'
   },
@@ -193,8 +193,8 @@ const equipmentData = [
     id: 26,
     name: 'Escada 13 Degraus Botafogo',
     category: 'outros',
-    specs: { degraus: '13', material: 'Alumínio', capacidade: '150 kg' },
-    description: 'Escada extensível para serviços gerais. Leve, resistente e segura para uso profissional.',
+    specs: { degraus: '13', material: 'Alumínio', capacidade: '150 kg', fechada: '3.80 m', estendida: '6.00 m', aberta: '3.50 m' },
+    description: 'Equipamento versátil, ideal para uso profissional e doméstico, alcançando alta estabilidade e segurança. Possuí sapatas antiderrapantes e barra estabilizadora.',
     image: '/imagens/produtos/escada-13graus.png'
   },
   {
@@ -209,7 +209,7 @@ const equipmentData = [
     id: 28,
     name: 'Guarda Corpo Para Andaimes 1x1m',
     category: 'andaimes',
-    specs: { medida: '1.0 x 1.0 m', material: 'Aço Galvanizado', norma: 'NR-18' },
+    specs: { largura: '1.0 m', altura: '1.20 m', material: 'Aço Galvanizado', norma: 'NR-18' },
     description: 'Elemento de proteção coletiva para trabalhos em altura. Instalação rápida e segurança garantida.',
     image: '/imagens/produtos/guarda-corpo-andaime.png'
   },
