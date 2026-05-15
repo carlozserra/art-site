@@ -4,18 +4,46 @@ import { motion } from 'framer-motion';
 import { ChevronRight, MapPin, ExternalLink, ShieldCheck, Clock, Users, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import WhatsAppButton from '../components/WhatsAppButton';
+import { PRODUCT_LIST } from '../components/Header';
 
-const marqueeProducts = [
-  { name: 'Andaimes', img: '/imagens/produtos/andaime.webp' },
-  { name: 'Escoras', img: '/imagens/produtos/escoras_met.webp' },
-  { name: 'Martelete', img: '/imagens/produtos/martelete_5kg.webp' },
-  { name: 'Betoneira 400L', img: '/imagens/produtos/betoneira_400l.webp' },
-  { name: 'Compactador', img: '/imagens/produtos/compactador_pula_pula.webp' },
-  { name: 'Gerador', img: '/imagens/produtos/gerador.webp' },
-  { name: 'Guincho', img: '/imagens/produtos/guincho_col.webp' },
-  { name: 'Placa Vibratória', img: '/imagens/produtos/placa_vibr.webp' },
-  { name: 'Motobomba', img: '/imagens/produtos/motobomb_gaso.webp' },
-];
+const productImages = {
+  1: '/imagens/produtos/betoneira_400l.webp',
+  2: '/imagens/produtos/compactador_pula_pula.webp',
+  3: '/imagens/produtos/compressor_ar.webp',
+  4: '/imagens/produtos/gerador.webp',
+  5: '/imagens/produtos/guincho_col.webp',
+  7: '/imagens/produtos/motobomba_submersivel.webp',
+  9: '/imagens/produtos/placa_vibr.webp',
+  10: '/imagens/produtos/rompedor_30kg.webp',
+  11: '/imagens/produtos/lavadora_alt_pr.webp',
+  12: '/imagens/produtos/lixad_ang.webp',
+  13: '/imagens/produtos/martelete_2kg.webp',
+  14: '/imagens/produtos/martelete_5kg.webp',
+  15: '/imagens/produtos/martelo_demolidor.webp',
+  16: '/imagens/produtos/parafusadeira.webp',
+  17: '/imagens/produtos/serra_circ.webp',
+  18: '/imagens/produtos/serra_marmore.webp',
+  19: '/imagens/produtos/andaime.webp',
+  20: '/imagens/produtos/escoras_met.webp',
+  21: '/imagens/produtos/rodizio.webp',
+  22: '/imagens/produtos/sapata_ajustavel.webp',
+  23: '/imagens/produtos/sapata_fixa.webp',
+  24: '/imagens/produtos/vibrador-imersao.png',
+  25: '/imagens/produtos/escada-andaime.png',
+  26: '/imagens/produtos/escada-13graus.png',
+  27: '/imagens/produtos/martelete-16kg.png',
+  28: '/imagens/produtos/guarda-corpo-andaime.png',
+  29: '/imagens/produtos/transformador.png',
+  30: '/imagens/produtos/extensao.png',
+  31: '/imagens/produtos/perfurador_solo_gasolina.webp',
+  32: '/imagens/produtos/misturador-eletrico.png',
+  33: '/imagens/produtos/esmerilhadeira.png',
+};
+
+const marqueeProducts = PRODUCT_LIST.map(p => ({
+  name: p.name,
+  img: productImages[p.id] || '/imagens/produtos/andaime.webp'
+}));
 
 const ProductCarousel = () => {
   const trackRef = useRef(null);
@@ -234,12 +262,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-            {[
-              { name: 'Andaimes', productId: 19, img: '/imagens/produtos/andaime.webp' },
-              { name: 'Escoras Metálicas', productId: 20, img: '/imagens/produtos/escoras_met.webp' },
-              { name: 'Marteletes', productId: 14, img: '/imagens/produtos/martelete_5kg.webp' },
-              { name: 'Betoneiras', productId: 1, img: '/imagens/produtos/betoneira_400l.webp' },
-            ].map((item, idx) => (
+            {PRODUCT_LIST.slice(0, 4).map((item, idx) => (
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -252,11 +275,11 @@ const Home = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-tr from-white/0 via-white/40 to-white/0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-1000 blur-sm group-hover:duration-200"></div>
 
                 <Link
-                  to={`/catalogo?product=${item.productId}`}
+                  to={`/catalogo?product=${item.id}`}
                   className="relative h-full bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-white/30 rounded-2xl p-8 flex flex-col items-center justify-center transition-all duration-500 hover:-translate-y-3 shadow-[0_8px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden"
                 >
                   <div className="w-32 h-32 md:w-44 md:h-44 relative mb-8 flex items-center justify-center">
-                    <img src={item.img} alt={item.name} className="max-w-full max-h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.3)] group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-multiply" />
+                    <img src={productImages[item.id]} alt={item.name} className="max-w-full max-h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.3)] group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-multiply" />
                   </div>
                   <h3 className="text-xl md:text-2xl font-black uppercase tracking-widest text-center text-black/90 group-hover:text-black transition-colors">{item.name}</h3>
                 </Link>

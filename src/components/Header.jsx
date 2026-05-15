@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown, ChevronRight, Hammer, Settings2, Construction, In
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Global Data
-const PRODUCT_LIST = [
+export const PRODUCT_LIST = [
   { id: 1, name: 'Betoneira 400L', category: 'Concretagem' },
   { id: 2, name: 'Compactador Pula-Pula', category: 'Compactação' },
   { id: 3, name: 'Compressor de Ar', category: 'Outros' },
